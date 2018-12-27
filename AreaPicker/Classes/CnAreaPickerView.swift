@@ -133,8 +133,9 @@ public class CnAreaPickerView: UIView {
     }
     
     func setCode(provinceName: String, cityName: String, areaName: String?){
-        
-        let url =  Bundle(for: CnAreaPickerView.self).url(forResource: "addressCode", withExtension: nil)!
+        let bundleUrl = Bundle(for: CnAreaPickerView.self).url(forResource: "AreaPicker.bundle", withExtension: nil)!
+        let resourceBundle =  Bundle(url: bundleUrl)!
+        let url =  resourceBundle.url(forResource: "addressCode", withExtension: nil)!
         let data = try! Data(contentsOf: url)
         let dict = try! JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: AnyObject]
         let provinces = dict["p"] as! [[String: AnyObject]]
@@ -184,7 +185,9 @@ public class CnAreaPickerView: UIView {
     
     // MARK: - lazy
     lazy var provinces: [[String: AnyObject]] = {
-        let url = Bundle(for: CnAreaPickerView.self).url(forResource: "area", withExtension: "plist")!
+        let bundleUrl = Bundle(for: CnAreaPickerView.self).url(forResource: "AreaPicker.bundle", withExtension: nil)!
+        let resourceBundle =  Bundle(url: bundleUrl)!
+        let url = resourceBundle.url(forResource: "area", withExtension: "plist")!
         let content = try! Data(contentsOf: url)
         let plist = try! PropertyListSerialization.propertyList(from: content, options: [], format: nil) as? [[String: AnyObject]]
 //        let s = NSArray(contentsOfFile: bundlePath!) as? [[String: AnyObject]]

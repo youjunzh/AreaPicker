@@ -54,7 +54,7 @@ extension ViewController: CnAreaPickerDelegate {
     func cancel(areaToolbar: CnAreaToolbar, textField: UITextField, locate: CnLocation, item: UIBarButtonItem) {
         print("点击了取消")
         //还原原来的值......
-        myLocate.decription()
+//        myLocate.decription()
         setAreaText(locate: myLocate)
     }
     
@@ -64,7 +64,7 @@ extension ViewController: CnAreaPickerDelegate {
         //picker还有转动的时候有些值是空的........取值前一定要判断是否为空.否则crash.....
         //赋值新地址......
         print("最后的值是\n")
-        locate.decription()
+//        locate.decription()
         //        myLocate = locate //不能直接赋值地址,这个是引用来的
         myLocate.province = locate.province
         myLocate.provinceCode = locate.provinceCode
@@ -78,7 +78,7 @@ extension ViewController: CnAreaPickerDelegate {
     func statusChanged(areaPickerView: CnAreaPickerView, pickerView: UIPickerView, textField: UITextField, locate: CnLocation) {
         //立即显示新值
         print("转到的值:\n")
-        locate.decription()
+//        locate.decription()
         if !locate.area.isEmpty {
             areaTextField.text = "\(locate.province) \(locate.city) \(locate.area)"
         } else {
