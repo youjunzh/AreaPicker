@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.name             = 'AreaPicker'
   s.version          = '0.1.0'
   s.summary          = 'China Area Picker (省 市 区）'
-
+  s.swift_version    = '4.1'
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
 #   * Try to keep it short, snappy and to the point.
@@ -18,7 +18,9 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
+China Area Picker (省 市 区）
 省市区选择器
+                        DESC
 
   s.homepage         = 'https://github.com/youjunzh/AreaPicker'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
